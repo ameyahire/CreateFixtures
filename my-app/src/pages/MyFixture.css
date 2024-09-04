@@ -1,0 +1,28 @@
+:root{
+    --gradient: linear-gradient(to bottom right, rgb(255, 161, 60), rgb(255, 185, 33));
+  }
+
+.title h1{
+    color: white;
+}
+
+.my-fixture{
+    border: 1px solid pink;
+    padding: 10px;
+    margin: 10px;
+    color: rgb(25, 25, 25);
+    cursor: pointer;
+    background: var(--gradient);
+}
+
+.fixture-content{
+    color: white;
+}
+
+.fixture-content-insidebox{
+    border: 1px solid rgb(255, 87, 180);
+    color: rgb(0, 0, 0);
+    background: #f7f7f7;
+    padding: 10px;
+    margin: 10px;
+}

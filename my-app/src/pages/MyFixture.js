@@ -1,5 +1,5 @@
-// src/pages/MyFixture.js
 import React, { useState } from 'react';
+import './MyFixture.css';
 
 const MyFixture = ({ events, setEvents }) => {
   const [selectedEvent, setSelectedEvent] = useState(null);
@@ -28,18 +28,12 @@ const MyFixture = ({ events, setEvents }) => {
   };
 
   return (
-    <div>
+    <div className='title'>
       <h1>My Fixtures</h1>
       <div>
         {events.map((event, eventIndex) => (
-          <div
+          <div className='my-fixture'
             key={eventIndex}
-            style={{
-              border: '1px solid black',
-              padding: '10px',
-              margin: '10px',
-              cursor: 'pointer'
-            }}
             onClick={() => handleEventClick(event)}
           >
             <strong>{event.tournamentName}</strong>
@@ -48,11 +42,11 @@ const MyFixture = ({ events, setEvents }) => {
         ))}
       </div>
       {selectedEvent && (
-        <div>
+        <div className='fixture-content'>
           <h2>{selectedEvent.tournamentName} Fixtures</h2>
           <button onClick={() => setIsLive(!isLive)} style={{ backgroundColor: 'orange', color: 'white', padding: '10px', margin: '10px' }}>Live</button>
           {selectedEvent.fixtures.map((fixture, fixtureIndex) => (
-            <div key={fixtureIndex} style={{ border: '1px solid black', padding: '10px', margin: '10px' }}>
+            <div className='fixture-content-insidebox' key={fixtureIndex}>
               <p>{fixture.team1} vs {fixture.team2}</p>
               {isLive ? (
                 <div>

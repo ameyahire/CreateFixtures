@@ -1,0 +1,88 @@
+:root{
+    --gradient: linear-gradient(to bottom right, rgb(255, 150, 39), rgb(255, 80, 129));
+  }
+  
+
+.hero{
+  background-image: url('../Assets/bg.png'); /* Replace with your image path */
+  background-size: cover; /* Cover the entire container */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent repetition */
+  height: 60vh;
+
+}
+
+.home h1{
+    font-size: 71px;
+}
+
+.hero{
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: black 0px 2px 13px 0px;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.homebutton{
+    display: flex;
+    justify-content: center;
+    margin-top: 45px;
+    color: white;
+}
+
+.home button{
+    height: 50px;
+    width: 146px;
+    background: rgb(94, 94, 94);
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+    border: 1px solid black;
+    transition: background 0.6s ease;
+}
+
+.home button:hover{
+    background-image: var(--gradient);
+    color: rgb(255, 255, 255); /* Change text color if needed */
+  }
+
+
+
+.homeform{
+    margin-top: 42px;
+    margin-bottom: 35px;
+    margin-left: 66px;
+    background: linear-gradient(to right, #ff8741, #ff57a6, red);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.homeform input{
+    height: 30px;
+}
+
+.homeform select{
+    height: 30px;
+}
+/* new try */
+
+/* .home {
+    height: 200px;
+    width: 200px;
+    background-image: var(--gradient);
+    border-radius: 1rem;
+    position: relative;
+  }
+  
+.home::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: var(--gradient);
+    border-radius: inherit;
+    filter: blur(25px) brightness(1.5);
+    transform: translateY(15%) scale(0.95);
+    z-index: -1;
+  }
+   */

@@ -1,6 +1,7 @@
 // src/pages/TeamSheet.js
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import './TeamSheet.css'
 
 const TeamSheet = ({ formData, setEvents }) => {
   const navigate = useNavigate();
@@ -96,7 +97,7 @@ const TeamSheet = ({ formData, setEvents }) => {
   }
 
   return (
-    <div>
+    <div className='teamsheet'>
       <h1>{formData.tournamentName} - {formData.selectedSport}</h1>
       <h2>{formData.selectedTournament} Tournament</h2>
       <h3>Enter Team Names</h3>
@@ -111,14 +112,15 @@ const TeamSheet = ({ formData, setEvents }) => {
           />
         </div>
       ))}
-      <button onClick={handleRandomFixture} style={{ backgroundColor: 'green', color: 'white', padding: '10px', margin: '10px' }}>Random Fixture</button>
-      <button onClick={handleCustomFixture} style={{ backgroundColor: 'blue', color: 'white', padding: '10px', margin: '10px' }}>Custom Fixture</button>
+      <button onClick={handleRandomFixture} style={{ backgroundColor: '#93ff4c', color: 'black', padding: '10px', margin: '10px' }}>Random Fixture</button>
+      <button onClick={handleCustomFixture} style={{ backgroundColor: '#31b1e0', color: 'black', padding: '10px', margin: '10px' }}>Custom Fixture</button>
 
       {fixtures.length > 0 && (
-        <div>
+        <div className='fixture'>
           <h3>Fixtures</h3>
+          <div className="fixture-table">
           {fixtures.map((fixture, index) => (
-            <div key={index} style={{ border: '1px solid black', padding: '10px', margin: '10px' }}>
+            <div key={index} style={{ border: '2px solid #ff7f7f', padding: '10px', margin: '10px' }}>
               <label>Team 1</label>
               <select
                 value={fixture.team1}
@@ -168,11 +170,12 @@ const TeamSheet = ({ formData, setEvents }) => {
           ))}
           <button
             onClick={handleDone}
-            style={{ backgroundColor: isFormValid ? 'green' : 'gray', color: 'white', padding: '10px', margin: '10px' }}
+            style={{ backgroundColor: isFormValid ? 'green' : 'gray', color: 'black', padding: '10px', margin: '10px' }}
             disabled={!isFormValid}
           >
             Done
           </button>
+        </div>
         </div>
       )}
     </div>

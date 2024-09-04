@@ -1,6 +1,7 @@
 // src/pages/Home.js
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import './Home.css'
 
 const Home = ({ setFormData }) => {
   const [showOptions, setShowOptions] = useState(false);
@@ -46,12 +47,14 @@ const Home = ({ setFormData }) => {
   };
 
   return (
-    <div>
-      <h1>Welcome to the Fixture App</h1>
-      <p>This is an application where you can manage and view fixtures.</p>
+    <div className='home'>
+      <div className="hero">
+      </div>
+      <div className="homebutton">
       <button onClick={handleButtonClick}>Create Fixture</button>
+      </div>
       {showOptions && (
-        <div>
+        <div className='homeform'>
           <h2>Tournament Name</h2>
           <input 
             type="text" 

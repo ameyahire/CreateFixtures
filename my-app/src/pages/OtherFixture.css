@@ -1,0 +1,10 @@
+.other-fixture h1{
+    color: white;
+}
+
+.other-fixture-insidebox{
+    border: 1px solid gray; 
+    padding: 10px; 
+    margin: 10px;
+    background-color: white;
+}

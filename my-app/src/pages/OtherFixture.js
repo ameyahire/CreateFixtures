@@ -1,5 +1,5 @@
-// src/pages/OtherFixture.js
 import React, { useState } from 'react';
+import './OtherFixture.css'
 
 const OtherFixture = ({ events }) => {
   const [expandedEventIndex, setExpandedEventIndex] = useState(null);
@@ -9,10 +9,10 @@ const OtherFixture = ({ events }) => {
   };
 
   return (
-    <div>
+    <div className='other-fixture'>
       <h1>Other Fixtures</h1>
       {events.map((event, eventIndex) => (
-        <div key={eventIndex} style={{ border: '1px solid black', padding: '10px', margin: '10px' }}>
+        <div key={eventIndex} style={{ border: '1px solid orange', padding: '10px', margin: '10px' }}>
           <div
             style={{ cursor: 'pointer', padding: '10px', backgroundColor: '#f0f0f0' }}
             onClick={() => toggleExpand(eventIndex)}
@@ -23,7 +23,7 @@ const OtherFixture = ({ events }) => {
           {expandedEventIndex === eventIndex && (
             <div style={{ marginTop: '10px' }}>
               {event.fixtures.map((fixture, fixtureIndex) => (
-                <div key={fixtureIndex} style={{ border: '1px solid gray', padding: '10px', margin: '10px' }}>
+                <div className='other-fixture-insidebox' key={fixtureIndex} style={{ border: '1px solid gray', padding: '10px', margin: '10px' }}>
                   <p>{fixture.team1} vs {fixture.team2}</p>
                   <p>Score: {fixture.score1} - {fixture.score2}</p>
                   {fixture.matchOver && (
